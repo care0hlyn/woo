@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  database: woo_development
+
+test:
+  adapter: postgresql
+  database: woo_test

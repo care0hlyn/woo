@@ -1,0 +1,36 @@
+<% content_for(:title, "Login | Woo") %>
+
+  <div class="row">
+  <div class="col-lg-12">
+
+  <div class="login-card">
+    <h6><% if current_user = nil %>
+      <%= link_to "Sign Up", new_user_path %>
+    <% else %>
+      <%= link_to "Log In", root_url %>
+    <% end %></h6>
+
+
+    <h1>"Hello."</h1>
+      <%= form_tag sessions_path do %>
+      <div class="field">
+            <%= label_tag :name %><br />
+            <%= text_field_tag :name, params[:name] %>
+      </div>
+      <div class="field">
+            <%= label_tag :email %><br />
+            <%= text_field_tag :email, params[:email] %>
+      </div>
+      <div class="field">
+            <%= label_tag :password %><br />
+            <%= password_field_tag :password %>
+      </div>
+      <div class="field">
+            <%= label_tag :password_confirmation %><br />
+            <%= password_field_tag :password_confirmation %>
+
+      <div class="actions"><%= submit_tag "Sign Up", :class => "btn btn-default btn-xs"  %>
+      <% end %>
+    </div>
+  </div><!-- div for col -->
+</div><!-- div for row -->
